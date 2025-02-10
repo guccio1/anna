@@ -1,2 +1,0 @@
-# Ciao anna
-![alt text](
