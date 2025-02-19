@@ -17,7 +17,7 @@
 </head>
 <body>
     <h1>Lista delle mie lettere digitali</h1>
-  <input type="text" id="inputBox" placeholder="Inserire password">  
+  <p id="pswbox"><input type="text" id="inputBox" placeholder="Inserire password"></p>  
   <p id="message"></p>
   <p id="hiddenContent">
     <button onclick="document.location='https://johsecret.github.io/fintalettera/'">Finta lettera</button><br><br>
@@ -43,6 +43,7 @@
                 // Compare input value (case-insensitive check)
                 if (inputBox.value.toLowerCase() === correctWord) {
                     hiddenContent.style.display = "block";
+                    pswbox.style.display="none";
                 } else {
                     message.textContent = "Password errata";
                     message.style.color = "red";
