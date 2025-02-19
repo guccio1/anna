@@ -10,11 +10,16 @@
             text-align: center;
             padding: 50px;
         }
+      #hiddenContent {
+        display: none
+      }
     </style>
 </head>
 <body>
     <h1>Lista delle mie lettere digitali</h1>
-    <p>
+  <input type="text" id="inputBox" placeholder="Inserire password">  
+  <p id="message"></p>
+  <p id="hiddenContent">
     <button onclick="document.location='https://johsecret.github.io/fintalettera/'">Finta lettera</button><br><br>
         <button onclick="document.location='https://johsecret.github.io/veralettera/'">San Valentino</button><br><br>
         <button onclick="document.location='https://johsecret.github.io/letteradicompleanno/'">Compleanno</button><br><br>
@@ -22,6 +27,36 @@
         Piano piano continueranno ad aggiungersene🥰<br>
         <input type="image" src="IMG_8068.JPEG" height="200" width="300">
     </p>
-</body>
+  <script>
+        // Define the correct word
+        const correctWord = "boris";
+
+        // Get elements
+        const inputBox = document.getElementById('inputBox');
+        const message = document.getElementById('message');
+        const hiddenContent = document.getElementById('hiddenContent');
+
+        // Function to check input on Enter key
+        function checkInput(event) {
+            // Check if Enter key is pressed (key code 13 or 'Enter')
+            if (event.key === "Enter") {
+                // Compare input value (case-insensitive check)
+                if (inputBox.value.toLowerCase() === correctWord) {
+                    hiddenContent.style.display = "block";
+                } else {
+                    message.textContent = "Password errata";
+                    message.style.color = "red";
+                }
+
+                // Clear input box after checking
+                inputBox.value = "";
+            }
+        }
+
+        // Listen for the "keypress" event on the input box
+        inputBox.addEventListener('keypress', checkInput);
+    </script>
+
+  </body>
 </html>
 
